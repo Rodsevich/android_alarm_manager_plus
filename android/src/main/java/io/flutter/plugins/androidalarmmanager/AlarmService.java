@@ -136,6 +136,7 @@ public class AlarmService extends JobIntentService {
     Intent alarm = new Intent(context, AlarmBroadcastReceiver.class);
     alarm.putExtra("id", requestCode);
     alarm.putExtra("callbackHandle", callbackHandle);
+    alarm.putExtra("wakeup", wakeup);
     PendingIntent pendingIntent =
         PendingIntent.getBroadcast(context, requestCode, alarm, PendingIntent.FLAG_UPDATE_CURRENT);
 

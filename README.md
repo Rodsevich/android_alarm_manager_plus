@@ -38,6 +38,14 @@ Next, within the `<application></application>` tags, add:
 
 ```
 
+If you want the app to wakeup you also need to add this permissions to the activity tag:
+
+```xml
+<activity
+ ...
+android:turnScreenOn="true" android:showWhenLocked="true">
+```
+
 Then in Dart code add:
 
 ```dart
@@ -61,7 +69,6 @@ main() async {
 will not run in the same isolate as the main application. Unlike threads, isolates do not share
 memory and communication between isolates must be done via message passing (see more documentation on
 isolates [here](https://api.dart.dev/stable/2.0.0/dart-isolate/dart-isolate-library.html)).
-
 
 ## Using other plugins in alarm callbacks
 
